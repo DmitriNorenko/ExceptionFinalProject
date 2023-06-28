@@ -23,16 +23,14 @@ namespace ExceptionFinalProject
             switch (number)
             {
                 case 1:
-                    Console.WriteLine("Вы выбрали сортировку от А до Я\n");
+                    Console.WriteLine("\nВы выбрали сортировку от А до Я\n");
                     persons.Sort((x, y) => string.Compare(x, y));
-                    foreach (string person in persons) { Console.WriteLine(person); }
+                    foreach (string person in persons) { Console.WriteLine("\t" + person + "\n"); }
                     break;
                 case 2:
-                    Console.WriteLine("Вы выбрали сортировку от Я до А\n");
-                    Console.WriteLine("Вы выбрали сортировку от Я до А\n");
-                    Console.WriteLine("Вы выбрали сортировку от Я до А\n");
+                    Console.WriteLine("\nВы выбрали сортировку от Я до А\n");
                     persons.Sort((x, y) => string.Compare(y, x));
-                    foreach (string person in persons) { Console.WriteLine(person); }
+                    foreach (string person in persons) { Console.WriteLine("\t" + person + "\n"); }
                     break;
                 default: Console.WriteLine("Меня никогда не вызовут. 8( *хнык*"); break;
             }
@@ -44,9 +42,9 @@ namespace ExceptionFinalProject
         public event WorkWithNum WorkWithNumber;
         public void Read()
         {
-            Console.WriteLine("Введите 1 или 2.");
+            Console.WriteLine("Введите 1 или 2.\n");
             int.TryParse(Console.ReadLine(), out int number);
-            if (number != 1 && number != 2) throw new FormatException("Вы ввели недопустимое значение.");
+            if (number != 1 && number != 2) throw new FormatException("\nВы ввели недопустимое значение.\n");
             StartEvent(number);
         }
         public void StartEvent(int number)
