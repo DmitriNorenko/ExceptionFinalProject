@@ -13,11 +13,11 @@ namespace ExceptionFinalProject
         {
             Exception[] exceptions = new Exception[]
             {
-                new ArgumentException(),
-                new DivideByZeroException(),
-                new FileNotFoundException(),
-                new FormatException(),
-                new MyException(),
+                new ArgumentException("Ошибка №1 - ArgumentException."),
+                new DivideByZeroException("Ошибка №2 - DivideByZeroException."),
+                new FileNotFoundException("Ошибка №3 - FileNotFoundException."),
+                new FormatException("Ошибка №4 - FormatException."),
+                new MyException("Ошибка №5 - MyException."),
             };
             foreach (Exception ex in exceptions)
             {
@@ -27,11 +27,11 @@ namespace ExceptionFinalProject
                 }
                 catch (Exception exception)
                 {
-                    if (exception is ArgumentException) Console.WriteLine("Ошибка №1 - ArgumentException.");
-                    if (exception is DivideByZeroException) Console.WriteLine("Ошибка №2 - DivideByZeroException.");
-                    if (exception is FileNotFoundException) Console.WriteLine("Ошибка №3 - FileNotFoundException.");
-                    if (exception is FormatException) Console.WriteLine("Ошибка №4 - FormatException.");
-                    if (exception is MyException) Console.WriteLine("Ошибка №5 - MyException.");
+                    if (exception is ArgumentException) Console.WriteLine(exception.Message);
+                    if (exception is DivideByZeroException) Console.WriteLine(exception.Message);
+                    if (exception is FileNotFoundException) Console.WriteLine(exception.Message);
+                    if (exception is FormatException) Console.WriteLine(exception.Message);
+                    if (exception is MyException) Console.WriteLine(exception.Message);
                 }
             }
             Console.ReadKey();
