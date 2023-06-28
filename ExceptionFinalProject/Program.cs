@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExceptionFinalProject;
 
 namespace ExceptionFinalProject
 {
@@ -11,6 +12,7 @@ namespace ExceptionFinalProject
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Задание 1. Начало.\n");
             Exception[] exceptions = new Exception[]
             {
                 new ArgumentException("Ошибка №1 - ArgumentException."),
@@ -34,6 +36,25 @@ namespace ExceptionFinalProject
                     if (exception is MyException) Console.WriteLine(exception.Message);
                 }
             }
+
+            Console.WriteLine("\nЗадание 1. Конец.\n");
+            Console.WriteLine("Задание 2. Начало.\n");
+            EnterNumber enterNumber = new EnterNumber();
+            enterNumber.WorkWithNumber += Task2.ShowNum;
+            bool IsWork = true;
+            while (IsWork)
+            {
+                try
+                {
+                    enterNumber.Read();
+                    IsWork = false;
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            Console.WriteLine("\nЗадание 2. Конец.\n");
             Console.ReadKey();
         }
         public class MyException : Exception
