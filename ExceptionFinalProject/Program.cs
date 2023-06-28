@@ -36,11 +36,10 @@ namespace ExceptionFinalProject
                     if (exception is MyException) Console.WriteLine(exception.Message);
                 }
             }
-
             Console.WriteLine("\nЗадание 1. Конец.\n");
             Console.WriteLine("Задание 2. Начало.\n");
             EnterNumber enterNumber = new EnterNumber();
-            enterNumber.WorkWithNumber += Task2.ShowNum;
+            enterNumber.WorkWithNumber += Task2.SortingRows;
             bool IsWork = true;
             while (IsWork)
             {

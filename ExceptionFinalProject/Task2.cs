@@ -12,13 +12,29 @@ namespace ExceptionFinalProject
 {
     internal class Task2
     {
-        public static void ShowNum(int number)
+        public static void SortingRows(int number)
         {
+            List<string> persons = new List<string>();
+            persons.Add("Иванов");
+            persons.Add("Смирнов");
+            persons.Add("Гусев");
+            persons.Add("Абрамов");
+            persons.Add("Яковлев");
             switch (number)
             {
-                case 1: Console.WriteLine("Вы нажали 1"); break;
-                case 2: Console.WriteLine("Вы нажали 2"); break;
-                default: Console.WriteLine("Меня никогда не вызовут.  8(  *хнык*"); break;
+                case 1:
+                    Console.WriteLine("Вы выбрали сортировку от А до Я\n");
+                    persons.Sort((x, y) => string.Compare(x, y));
+                    foreach (string person in persons) { Console.WriteLine(person); }
+                    break;
+                case 2:
+                    Console.WriteLine("Вы выбрали сортировку от Я до А\n");
+                    Console.WriteLine("Вы выбрали сортировку от Я до А\n");
+                    Console.WriteLine("Вы выбрали сортировку от Я до А\n");
+                    persons.Sort((x, y) => string.Compare(y, x));
+                    foreach (string person in persons) { Console.WriteLine(person); }
+                    break;
+                default: Console.WriteLine("Меня никогда не вызовут. 8( *хнык*"); break;
             }
         }
     }
